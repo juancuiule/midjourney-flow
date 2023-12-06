@@ -37,7 +37,7 @@ const handleWithStream = async <T>(
 export const API = {
   imagine: async (prompt: string, onChunk: (chunk: ChunkType) => void) => {
     handleWithStream(
-      fetch("http://localhost:3000/api/imagine", {
+      fetch("/api/imagine", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const API = {
   },
   variation: async (body: any, onChunk: (chunk: ChunkType) => void) => {
     handleWithStream(
-      fetch("http://localhost:3000/api/variation", {
+      fetch("/api/variation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
